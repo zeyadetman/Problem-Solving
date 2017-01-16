@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+struct cl {
+    bool operator()(const std::string &left, const std::string &r) const {
+        return left.size()<r.size();
+    }
+};
+int main()
+{
+    //freopen("Defense.txt","r",stdin);
+    //freopen("FighterShow.txt","w",stdout);
+    string x;
+    vector<string> vec,vec1,res;
+    while(x!="#"){
+        getline(cin,x);
+        istringstream iss(x);
+        string word;
+        while(iss >> word){
+            vec1.push_back(word);
+            string z;
+            transform(word.begin(),word.end(),word.begin(),::tolower);
+            vec.push_back(word);
+        }
+    }
+    for(int i=0;i<vec.size();i++){
+        sort(vec[i].begin(),vec[i].end());
+    }
+
+    bool flag=0;
+    for(int i=0;i<vec.size();i++){
+        for(int j=0;j<vec.size();j++){
+            if(vec[i]==vec[j] && i!=j) flag = 1;
+        }
+        if(flag == 0) res.push_back(vec1[i]);
+        flag=0;
+    }
+    sort(res.begin(),res.end());
+    for(int i=1;i<res.size();i++){
+            cout<<res[i]<<endl;
+    }
+    return 0;
+}

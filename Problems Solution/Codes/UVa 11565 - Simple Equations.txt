@@ -1,0 +1,31 @@
+//UVa 11565 - Simple Equations
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main(){
+    //freopen("INPUT.txt", "r", stdin);
+    //freopen("FighterShow.txt", "w", stdout);
+    int A,B,C,n;
+    cin>>n;
+    while(n--)
+    {
+        int minx=100000,miny=100000,minz=0;
+        bool flag=false;
+        cin>>A>>B>>C;
+        for(int x=-100; x<=100; x++){
+            for(int y=-100; y<=100; y++){
+                for(int z=-100; z<=100; z++){
+                    if(x+y+z==A && x*y*z==B && x*x+y*y+z*z==C && x!=y && x!=z && y!=z){
+                        if(x<minx){minx=x; miny=y; minz=z; flag=true;}
+                        else if(x==minx){ if(y<miny){minx=x; miny=y; minz=z;} }
+                    }
+                }
+            }
+        }
+        if(flag)
+            cout<<minx<<" "<<miny<<" "<<minz<<endl;
+        else
+            cout<<"No solution.\n";
+    }
+    return 0;
+}

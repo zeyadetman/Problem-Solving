@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+bool checker(int x,int y){
+    int arr[10]={0};
+    if(y<100)
+        arr[0]+=3;
+    else if(y<1000)
+        arr[0]+=2;
+    else if(y<10000)
+        arr[0]++;
+    if(x<100)
+        arr[0]+=3;
+    else if(x<1000)
+        arr[0]+=2;
+    else if(x<10000)
+        arr[0]++;
+    while(x){
+        arr[x%10]++;
+        x=(x-(x%10))/10;
+    }
+    while(y){
+        arr[y%10]++;
+        y=(y-(y%10))/10;
+    }
+    for(int i=0; i<10; i++) if(arr[i]>1) return false;
+    return true;
+}
+int main(){
+    int abcde,n,bl=0;
+    while(cin>>n && n){
+        if(bl++) cout<<endl;
+    bool check = false;
+    for(int fghij=01234; fghij<=98765/n; fghij++){
+        abcde = fghij * n;
+        if(checker(abcde, fghij) )
+            {printf("%.5d / %.5d = %d\n", abcde, abcde / n, n); check=true;}
+    }
+    if(!check) cout<<"There are no solutions for "<<n<<".\n";
+
+    }
+    return 0;
+}

@@ -1,0 +1,26 @@
+// Clock
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int tis,min=0,hour=0;
+	cout<<"tis :";
+	cin>>tis;
+	while (tis>60)
+	{
+		if (tis<3600)
+		{
+			tis=tis-60;
+			min=1+min;
+		}
+		else
+		{
+			tis=tis-3600;
+			hour=hour+1;
+		}
+	}
+
+	cout<<hour<<":"<<min<<":"<<tis<<endl;
+
+}

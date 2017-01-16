@@ -1,0 +1,62 @@
+#include<iostream>
+#include<iomanip>
+using namespace std ;
+
+int main() 
+
+{
+	 int t , i  ;
+	 double y , z , n , x ;
+
+	 int students[1000] ;
+
+	 cin >> t ;
+
+	 for ( i = 0 ; i < t ; i++ )
+
+	 {   
+		 cin >> n ;
+
+		 x = n ;
+
+
+		 int counter1 = 0 ;
+
+		 int counter2 = 0 ;
+
+		 for ( int j = 0 ; n>0 ; j++ )
+
+		 {
+			 cin >> students[j] ;
+
+			 counter1+=students[j] ;
+
+			 n-- ;
+
+
+		 }
+
+		
+		 y = counter1/x ;
+
+		 for ( int k = 0 ; k < x ; k++ )
+
+		 {
+			 if ( students[k] >  y )
+			 {
+				 counter2++ ;
+			 }
+
+
+		 }
+
+		   z = counter2/x * 100 ;
+
+		 cout<<fixed<<setprecision(3)<<z<<"%"<<endl;
+
+
+
+
+	 }
+	return 0 ;
+}

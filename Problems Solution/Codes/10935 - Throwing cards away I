@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    //freopen("fighterTest.txt","r",stdin);
+    //freopen("fighterShow.txt","w",stdout);
+  int n;
+  while(cin>>n){
+  if(!n) return 0;
+  queue<int> q,d;
+  for(int i=1;i<=n;i++) q.push(i);
+  while(q.size()>1){
+    d.push(q.front());
+    q.pop();
+    q.push(q.front());
+    q.pop();
+  }
+  if(n==1)cout<<"Discarded cards:\n";
+  else cout<<"Discarded cards: ";
+  while(d.size()>1){
+  cout<<d.front()<<", ";
+  d.pop();
+  }
+  if(n!=1) cout<<d.front()<<endl;
+  d.pop();
+  cout<<"Remaining card: "<<q.front()<<endl;
+  q.pop();
+  }
+
+}
+

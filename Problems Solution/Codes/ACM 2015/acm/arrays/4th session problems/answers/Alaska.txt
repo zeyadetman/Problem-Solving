@@ -1,0 +1,104 @@
+#include<iostream>
+using namespace std ;
+int main()
+
+{
+
+	int station[2000] ;
+
+	int n , i  , j  , res ;
+
+	int counter = 0 ;
+
+	bool test ;
+
+	
+
+	while ( cin >> n && n > 0 )
+
+	{
+		
+		
+
+		test = true ;
+
+		for ( i = 0 ; i < n ; i++ )
+
+		{
+
+			cin>>station[i] ;
+		}
+
+
+		for ( i = 0 ; i < n ; i++ )
+
+		{
+			for ( j = 0  ; j < n ; j++ )
+
+			{
+		        if ( station[i] < station[j] )
+
+				{
+					swap(station[i] , station[j]  ) ;
+				}
+
+			}
+
+
+		}
+
+
+
+
+		
+
+		
+
+		for ( j = 1 ; j < n ; j++ )
+
+		{
+
+			 
+
+			if (  station[j] - station[j-1] <= 200 &&  1422 - station[n-1] <= 100             )
+
+			{
+			
+				continue ;
+			}
+
+			else 
+
+			{
+
+				test = false ;
+
+			}
+
+		
+		}
+
+		if ( test == true )
+
+		{
+
+			cout<<"POSSIBLE"<<endl;
+		}
+
+
+		else 
+
+		{
+
+			cout<<"IMPOSSIBLE"<<endl;
+			
+		}
+
+
+
+
+	}
+	return 0 ;
+
+}
+

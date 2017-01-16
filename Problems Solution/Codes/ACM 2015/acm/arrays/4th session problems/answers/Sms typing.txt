@@ -1,0 +1,132 @@
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<stdio.h>
+
+using namespace std;
+
+int main()
+
+{
+	int t , i ;
+
+	char array1[9]={'a','d','g','j','m','p','t','w',' '};
+	char array2[8]={'b','e','h','k','n','q','u','x'};
+	char array3[8]={'c','f','i','l','o','r','v','y'};
+	char array4[2]={'s','z'} ; 
+
+	char index[100];
+	
+
+	cin >> t ;
+
+	cin.ignore();
+	
+	for ( i = 0 ; i < t ; i++ )
+
+	{
+
+		
+		cin.getline(index,100);
+
+
+
+		
+		int counter = 0 ;
+		int counter2 = 0 ;
+		int counter3 = 0 ;
+		int counter4 = 0 ;
+
+		for( int x = 0  ; x <= 8  ;  x++   )
+		{
+		
+
+			for( int y=0  ;y<strlen(index) ; y++ )
+			{
+				if (  index[y] == array1[x] )
+				{
+					counter++;
+				}
+
+				
+
+			}
+
+
+		
+		}
+			for( int m= 0  ; m <= 7  ;  m++   )
+		{
+		
+
+			for( int n = 0  ;n<strlen(index) ; n++ )
+			{
+				if ( index[n] == array2[m] )
+				{
+					counter2=counter2+2;
+				}
+
+				
+			}
+
+			}
+		
+
+			for( int q = 0  ; q <= 7  ;  q++   )
+		{
+
+		
+
+
+			for( int p = 0  ;p<strlen(index) ; p++ )
+			{
+				if ( index[p] == array3[q] )
+				{
+					counter3=counter3+3;
+				}
+
+				
+
+			}
+
+
+
+			}
+
+			
+			for( int s = 0  ; s <= 1  ;  s++   )
+		{
+
+		
+
+
+			for( int r = 0  ;r<strlen(index) ; r++ )
+			{
+				if ( index[r] == array4[s] )
+				{
+					counter4=counter4+4;
+				}
+
+				
+
+			}
+
+
+
+			}
+
+
+
+
+
+
+
+			
+
+			cout<<"Case #"<<i+1<<": "<<counter+counter2+counter3+counter4<<endl;
+
+	}
+
+return 0 ;
+
+}

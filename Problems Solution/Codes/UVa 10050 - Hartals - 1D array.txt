@@ -1,0 +1,52 @@
+/*
+49  74 72 75 73 74  69 6E  41 6C 6C 61 68
+*/
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,h,n;
+    int arr[120], holidays[3652];
+    for(int i=0;i<=3651; i++)
+        {
+            holidays[0]=6;
+            holidays[1]=7;
+            if(i%2==0 && i!=0)
+                holidays[i]=7+holidays[i-2];
+            else if(i%2==1 && i!=1)
+                holidays[i]=holidays[i-1]+1;
+        }
+
+    cin>>t;
+    while(t--){
+        int bol[3652]={0};
+        int c=0;
+        cin>>h>>n;
+        for(int i=0; i<n; i++)
+            cin>>arr[i];
+
+        for(int i=0; i<n; i++)
+        {
+            int x;
+            x=arr[i];
+            for(int j=x ; j<=h ; j+=x)
+            {
+                bool check=false;
+                for(int k=0; k<h ; k++){
+                    if(j==holidays[k])
+                        {check=true; break;}
+                }
+                if(check==false)
+                    bol[j]=1;
+
+            }
+        }
+
+        for(int i=0; i<=h ;i++)
+            if(bol[i]==1)
+                c++;
+
+        cout<<c<<endl;
+    }
+    return 0;
+}

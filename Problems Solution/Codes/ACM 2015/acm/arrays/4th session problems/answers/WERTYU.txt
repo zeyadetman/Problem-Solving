@@ -1,0 +1,111 @@
+#include<iostream>
+#include<cstring>
+#include<string>
+using namespace std;
+
+int main()
+
+{
+	int x ;
+	char row1[13]= {'`','1','2','3','4','5','6','7','8','9','0','-','=' } ;
+	char row2[13]= {'Q','W','E','R','T','Y','U','I','O','P','[',']','\\' } ;
+    char row3[11]= {'A','S','D','F','G','H','J','K','L',';','\''} ;
+	char row4[10]= {'Z','X','C','V','B','N','M',',','.','/' } ;
+	
+
+	string ww ;
+
+
+
+	while(getline(cin,ww ))
+
+	{
+
+		for (  x = 0 ; ww[x]!='\0' ; x++ )
+
+		{
+
+		}
+
+
+
+
+	for ( int i = 1 ; i <= 13;i++ )
+
+	{
+		for( int j = 0 ; j <= x ; j++ )
+		{
+
+			if(ww[j] == row1[i] )
+			{
+              ww[j] = row1[i-1] ;
+			}
+		}
+
+
+	}
+
+
+	for ( int i = 1 ; i <= 13;i++ )
+
+	{
+		for( int j = 0 ; j <= x ; j++ )
+		{
+
+			if(ww[j] == row2[i] )
+			{
+              ww[j] = row2[i-1] ;
+			}
+		}
+
+
+	}
+
+
+
+	for ( int i = 1 ; i <= 11;i++ )
+
+	{
+		for( int j = 0 ; j <= x ; j++ )
+		{
+
+			if(ww[j] == row3[i] )
+			{
+              ww[j] = row3[i-1] ;
+			}
+		}
+
+
+	}
+
+
+	for ( int i = 1 ; i <= 10;i++ )
+
+	{
+		for( int j = 0 ; j <= x ; j++ )
+		{
+
+			if(ww[j] == row4[i] )
+			{
+              ww[j] = row4[i-1] ;
+			}
+		}
+
+
+	}
+
+
+
+
+
+
+	cout<<ww<<endl;
+
+
+
+}
+
+return 0 ;
+
+}
+

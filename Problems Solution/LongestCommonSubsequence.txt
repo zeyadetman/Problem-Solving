@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main() {
+    int arr[100][100],ans=INT_MIN;
+    string x="AAAATTTT",y="TAAATTTG";
+    for(int i=0;i<y.length();i++){
+        for(int j=0;j<x.length();j++){
+            if(j==0){
+                if(y[i]==x[i]) arr[i][j] = max(arr[i][j-1],1);
+                else arr[i][j]=0;
+            }
+            else{
+                if(y[i]==x[j] && i>=j) arr[i][j] = arr[i-1][j-1] + 1;
+                else arr[i][j] = max(arr[i][j-1],arr[i][j]);
+            }
+            ans = max(ans,arr[i][j]);
+        }
+    }
+    cout<<ans<<endl;
+}

@@ -1,0 +1,30 @@
+/*
+49  74 72 75 73 74  69 6E  41 6C 6C 61 68
+*/
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,test=1,arr[52];
+    while(cin>>n && n!=0)
+    {
+        int sum=0;
+        for(int i=0 ; i<n; i++)
+        {
+            cin>>arr[i];
+            sum=arr[i]+sum;
+        }
+        sum=sum/n;
+        int c=0;
+        for(int i=0 ; i<n; i++)
+        {
+            if(arr[i]>sum)
+                c=arr[i]-sum+c;
+        }
+
+
+        cout<<"Set #"<<test<<"\n"<<"The minimum number of moves is "<<c<<".\n\n";
+        test++;
+    }
+    return 0;
+}

@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    //freopen("Defense.txt","r",stdin);
+    //freopen("FighterShow.txt","w",stdout);
+    int z=1;
+    int r,c;
+    cin>>r>>c;
+    while(r!=0&&c!=0){
+        char arr[102][102]={{}};
+        int sol[102][102]={{}};
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++) cin>>arr[i][j];
+        }
+        cout<<"Field #"<<z<<":\n";
+        z++;
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                if(arr[i][j]=='*') {cout<<"*";sol[i][j]=10;}
+                else if(arr[i][j]=='.'){
+                    if(arr[i-1][j-1]=='*') sol[i][j]++;
+                    if(arr[i-1][j]=='*') sol[i][j]++;
+                    if(arr[i-1][j+1]=='*') sol[i][j]++;
+
+                    if(arr[i][j-1]=='*') sol[i][j]++;
+                    if(arr[i][j+1]=='*') sol[i][j]++;
+
+                    if(arr[i+1][j-1]=='*') sol[i][j]++;
+                    if(arr[i+1][j]=='*') sol[i][j]++;
+                    if(arr[i+1][j+1]=='*') sol[i][j]++;
+                    cout<<sol[i][j];
+                    sol[i][j]=0;
+                }
+            }
+            cout<<endl;
+        }
+            cin>>r>>c;
+            if(r!=0 && c!=0)
+                cout<<endl;
+    }
+	return 0;
+}

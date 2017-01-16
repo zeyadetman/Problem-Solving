@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x,y=0;
+	cin>>x;
+	while (x>0)
+	{
+		y=x%10;
+		cout<<y;
+		x=x/10;
+	}
+
+
+	return 0;
+}

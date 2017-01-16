@@ -1,0 +1,21 @@
+// s=x^2+x^4+....+x^n
+
+#include<iostream>
+using namespace std;
+double power(double,double);
+int main()
+{
+	double a,b;
+	cin>>a>>b;
+	cout<<power(a,b);
+
+}
+double power(double x,double y)
+{
+	double s=0;
+	for (int i = 2; i <= y; i=i+2)
+	{
+		s=pow(x,i)+s;
+	}
+	return s;
+}

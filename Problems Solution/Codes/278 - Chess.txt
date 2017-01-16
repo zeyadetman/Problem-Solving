@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    //freopen("Defense.txt","r",stdin);
+    //freopen("FighterShow.txt","w",stdout);
+    int t;
+    cin>>t;
+    char p; int r,c;
+    while(t--){
+        cin>>p>>r>>c;
+        if(p=='r')
+            cout<<min(r,c);
+        else if(p=='K')
+            cout<<ceil((double)r/2) * ceil((double)c/2);
+        else if(p=='k')
+            cout<<ceil(((double)r*(double)c)/2);
+        else if(p=='Q')
+            cout<<min(r,c);
+            if(t>0)
+                cout<<endl;
+    }
+    cout<<endl;
+	return 0;
+}

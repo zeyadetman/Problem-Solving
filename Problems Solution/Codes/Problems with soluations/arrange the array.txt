@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int arr[7],m;
+	for (int i = 0; i < 7; i++)
+	{
+		cin>>arr[i];
+	}
+
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = 0; j < 7; j++)
+		{
+			if (arr[i]<arr[j])
+			{
+				m=arr[i];
+				arr[i]=arr[j];
+				arr[j]=m;
+
+			}
+		}
+	}
+	for (int i = 0; i < 7; i++)
+	{
+		cout<<arr[i];
+	}
+	return 0;
+
+}

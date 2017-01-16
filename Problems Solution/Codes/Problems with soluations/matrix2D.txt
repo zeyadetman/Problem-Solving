@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+const int rows=3;
+const int colu=4;
+int main()
+{
+	int mul[rows][colu];
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < colu; j++)
+		{
+			cin>>mul[i][j];
+		}
+	}
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < colu; j++)
+		{
+			cout<<mul[i][j]<<"  ";
+		}
+		cout<<endl;;
+	}
+
+
+
+	return 0;
+}

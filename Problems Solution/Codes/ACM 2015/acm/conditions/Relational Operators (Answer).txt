@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+	int t , i;
+	cin>>t;
+	
+	for(i=0 ; i<t ; i++ )
+	{
+		int x,y ;
+		cin>> x >> y ;
+
+		if (x>y)
+			cout << ">\n" ;
+
+		else if (x<y)
+			cout << "<\n";
+
+		else 
+		cout << "=" << endl;
+
+	}
+
+ return 0;
+}

@@ -1,0 +1,25 @@
+/*
+49  74 72 75 73 74  69 6E  41 6C 6C 61 68
+*/
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    while(cin>>s)
+    {
+        list<char> c;
+        list<char>::iterator it = c.begin();
+        for(int i=0 ; i <s.length() ; i++)
+        {
+            if(s[i]=='[') it=c.begin();
+            else if(s[i]==']') it=c.end();
+            else c.insert(it,s[i]);
+        }
+
+        for(it=c.begin() ; it!=c.end() ; it++)
+            cout<<*it;
+        cout<<endl;
+    }
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	long long N,B,H,W,a,p,xx=0,x;
+	while(cin>>N>>B>>H>>W)
+	{
+		x=B+1;
+		for(int i=0 ; i<H ; i++)
+		{
+			xx=0;
+			cin>>p;
+			for(int j=0 ; j<W ; j++)
+			{
+				cin>>a;
+				if(a>=N)
+				{
+					xx=p*N;
+					if(x>xx)
+						x=xx;
+				}
+			}
+			
+		}
+		if(x<B)
+			cout<<x<<endl;
+		else
+			cout<<"stay home"<<endl;
+		
+	}
+
+}

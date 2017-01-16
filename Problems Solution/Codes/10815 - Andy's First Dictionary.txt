@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+    //freopen("fighterAttack.txt","r",stdin);
+    //freopen("fighterShow.txt","w",stdout);
+    set<string> st;
+    string x;
+    while( getline(cin,x) ){
+        string word;
+        istringstream iss(x);
+        while(iss >> word){
+            transform(word.begin(),word.end(),word.begin(),::tolower);
+            string d="";
+            for(int i=0;i<word.length();i++){
+                if(isalpha(word[i])) d+=word[i];
+                else {st.insert(d); d.clear(); continue;}
+            }
+            st.insert(d);
+            word.clear();
+        }
+    }
+    set<string>::iterator it;
+    for(it=st.begin();it!=st.end();++it) {string a = *it; if(isalpha(a[0])) cout<<a<<endl;}
+
+    return 0;
+}

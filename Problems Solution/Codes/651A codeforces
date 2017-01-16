@@ -1,0 +1,36 @@
+//http://codeforces.com/contest/651/problem/A
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,k,c=0;
+    cin>>n>>k;
+    if(n==1 && k==1)
+	{
+	    cout<<0<<endl;
+	    return 0;
+	}
+    while(n>0 && k>0)
+    {
+        if(n>=k)
+    {
+        k=k+1;
+        n=n-2;
+        c++;
+    }
+    else if(n<k)
+    {
+        k=k-2;
+        n=n+1;
+        c++;
+    }
+    }
+    cout<<c<<endl;
+
+    return 0;
+}
+
+
+
+

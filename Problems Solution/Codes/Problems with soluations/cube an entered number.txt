@@ -1,0 +1,17 @@
+//cube an entered number
+
+#include<iostream>
+using namespace std;
+int cube(int);
+int main()
+{
+	int a;
+	cin>>a;
+	cout<<cube(a);
+
+}
+int cube(int x)
+{
+	int z=x*x*x;
+	return z;
+}

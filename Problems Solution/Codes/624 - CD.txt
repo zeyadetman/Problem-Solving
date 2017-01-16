@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int tracks[20];
+vector<int> vec,res;
+int n,k,maxsum=0,sum=0;
+void fun(int sum, int pos){
+    if(sum > maxsum){
+        maxsum = sum;
+        res = vec;
+    }
+    for(int i=pos;i<k;i++){
+        if(tracks[i]+sum <= n){
+            vec.push_back(tracks[i]);
+            sum+=tracks[i];
+            pos = i+1;
+            fun(sum,pos);
+            sum-=tracks[i];
+            vec.pop_back();
+        }
+    }
+}
+
+int main()
+{
+    //freopen("fighterAttack.txt","r",stdin);
+    //freopen("fighterShow.txt","w",stdout);
+    while(cin>>n>>k && EOF){
+    for(int i=0;i<k;i++)    cin>>tracks[i];
+    vec.clear();
+    for(int i=0;i<k;i++) fun(0,i);
+    for(int i=0;i<res.size();i++){
+        cout<<res[i]<<" ";
+    }
+    cout<<"sum:"<<maxsum<<endl;
+        vec.clear(); res.clear();
+        maxsum=0; sum=0;
+    }
+
+    return 0;
+}

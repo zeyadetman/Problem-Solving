@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int X,c=0;
+    int arr[10001];
+    while(cin>>X)
+    {
+        int z=X;
+        arr[c]=z;
+        sort(arr,arr+c+1);
+        if(c%2==0)
+        {
+            cout<<arr[(c/2)]<<endl;
+        }
+        else if(c%2==1)
+        {
+            int a;
+            a=floor(c/2);
+
+            cout<<(arr[a]+arr[a+1])/2<<endl;
+        }
+
+        c++;
+    }
+}

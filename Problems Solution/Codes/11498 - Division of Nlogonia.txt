@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	long long K,N,M,X,Y;
+	while(cin>>K && K!=0)
+	{
+			cin>>N>>M;
+			for (int i = 0; i < K; i++)
+			{
+				cin>>X>>Y;
+				if (X==N || Y==M || X==-N || Y==-M)
+				{
+					cout<<"divisa"<<endl;
+				}
+				else if (N<X && M<Y)
+				{
+					cout<<"NE"<<endl;
+				}
+				else if (N>X && M>Y)
+				{
+					cout<<"SO"<<endl;
+				}
+				else if (N<X && Y<M)
+				{
+					cout<<"SE"<<endl;
+				}
+				else if (N>X && Y>M)
+				{
+					cout<<"NO"<<endl;
+				}
+		}
+	}
+	
+	return 0;
+}

@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std ;
+int main()
+
+{
+	int n , m , r , x , y ;
+	int prices[10000] ;
+
+	while ( cin >> n )
+
+	{
+		for ( int i = 0 ; i < n ; i++ )
+		{
+			cin>>prices[i];
+
+		}
+		
+		cin >> m ;
+
+		
+
+		r = m ;
+
+		for ( int j = 0 ; j < n ; j++ )
+		{
+			for (int g = 0 ; g < n ; g++ )
+
+			{
+				if ( prices[j] + prices[g]== m && prices[j] >= prices[g] )
+				{
+					if (prices[j] - prices[g] < r )
+					{
+						r = prices[j] - prices[g] ;
+						x = prices[g] ;
+						y = prices[j] ;
+					}
+				}
+
+				else if ( prices[j] + prices[g]== m && prices[j] < prices[g] )
+				{
+					if ( prices[g] - prices[j] < r )
+					{
+						r = prices[g] - prices[j] ;
+						x = prices[j] ;
+						y = prices[g] ;
+
+
+					}
+				}
+			}
+
+		}
+
+		cout<<"Peter should buy books whose prices are "<<x<<" and "<<y<<"."<<endl;
+		cout<<endl;
+
+
+	}
+	return 0 ;
+}

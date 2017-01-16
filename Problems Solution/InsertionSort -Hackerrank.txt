@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main() {
+    int x,num;
+    cin>>x;
+    vector<int> vec;
+    for(int i=0;i<x;i++) {cin>>num; vec.push_back(num);}
+    for(int i=1;i<x;i++){
+        int j=i-1;
+        int l=i;
+        while(vec[l]<vec[j]){
+            swap(vec[l],vec[j]);
+            if(j!=0) j--;
+            if(l!=0) l--;
+        }
+        for(int k=0;k<x;k++) cout<<vec[k]<<" ";
+        cout<<endl;
+    }
+    return 0;
+}

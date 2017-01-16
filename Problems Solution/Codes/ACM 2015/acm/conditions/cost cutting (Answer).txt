@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+	int T,i ;
+	cin>>T;
+	
+	for(i=1 ; i<=T ; i++ )
+	{
+		int x,y,z ;
+		cin>> x >> y >>z ;
+
+		if (y>x&&y<z||y<x&&y>z)
+			cout << "Case " << i << ": " << y <<endl ;
+
+		else if (x>y&&x<z||x<y&&x>z)
+			cout << "Case " << i << ": " << x <<endl;
+
+		else 
+		cout << "Case " << i << ": " << z << endl;
+
+	}
+
+ return 0;
+}

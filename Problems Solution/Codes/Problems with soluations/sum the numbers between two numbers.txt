@@ -1,0 +1,19 @@
+// sum the numbers between two numbers
+#include<iostream>
+using namespace std;
+int sum(int);
+int main()
+{
+	int a=0;
+	cout<<sum(a);
+	return 0;
+}
+int sum(int x)
+{	
+	int z=0;
+	for (int i = 1; i < 4; i++)
+	{
+		z=i+z;
+	}
+	return z;
+}

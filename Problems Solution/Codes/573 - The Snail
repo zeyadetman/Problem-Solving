@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float H, U, D, F;
+    float intihw=0.00; int ff=0;
+    while(cin>>H>>U>>D>>F && H!=0)
+    {
+        ff=0;
+        intihw=0.00;
+        bool contnu=true;
+        F=((F/100)*U);
+        while(contnu)
+        {
+            if(U>0)
+                intihw=intihw+U;
+            U=U-F;
+            if(intihw>H)
+            {
+                cout<<"success on day "<<ff+1<<endl;
+                contnu=false; break;
+            }
+            intihw=intihw-D;
+            if(intihw>H)
+            {
+                cout<<"success on day "<<ff+1<<endl;
+                contnu=false; break;
+            }
+            else if(intihw<0)
+            {
+                cout<<"failure on day "<<ff+1<<endl;
+                contnu=false; break;
+            }
+            ff++;
+        }
+    }
+
+    return 0;
+}
+
