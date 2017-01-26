@@ -1,0 +1,11 @@
+1. trasform(s.begin(),s.end(),s.begin(),::tolower);  //convert string to lowercase.
+2. isalpha(char); //check this character is alpha.
+3. isupper(char); //check the character is in upper case 
+4. <bits/stdc++.h>
+5. Complexity of sort types:
+http://stackoverflow.com/questions/1933759/when-is-each-sorting-algorithm-used
+6. Visual
+http://visualgo.net/sorting
+https://www.toptal.com/developers/sorting-algorithms/
+7. std::string ss(dqu.begin(),dqu.end());  //copy contents of deque of chars into string 
+8. Modulo of a negative number: (?n)%k == (k?(n%k))%k  -- http://codeforces.com/contest/450/problem/B
