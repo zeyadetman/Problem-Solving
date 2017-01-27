@@ -9,3 +9,4 @@ http://visualgo.net/sorting
 https://www.toptal.com/developers/sorting-algorithms/
 7. std::string ss(dqu.begin(),dqu.end());  //copy contents of deque of chars into string 
 8. Modulo of a negative number: (?n)%k == (k?(n%k))%k  -- http://codeforces.com/contest/450/problem/B
+9. Find substring: std::size_t zero7 = s.find("0000000");   if(zero7!=std::string::npos) found=true;
