@@ -53,3 +53,59 @@ l.forEach((item, index) => {
   }
 })
 ```
+
+## With Pivot 
+
+Ok, We've to choose a pivot in the range of our tree numbers (ex. mid value), In the next implementation I've just re-write the main code to fit
+the new changes.
+
+
+```js
+const l = [-1, 0, 3, 5, 9, 12]
+let binaryTree = new Map();
+const pivot = Math.floor(l.length / 2);
+let start = 0;
+
+const add = (root, item, index) => {
+  console.log(root, item)
+  let node = root.get(Array.from(root.keys())[0]);
+  console.log({ nodeValue: node.value, item })
+  if (item > node.value) {
+    if (node.right) {
+      add(node.right, item, index)
+    } else {
+      node.right = new Map();
+      node.right.set(
+        item,
+        { left: null, right: null, value: item, index }
+      );
+    }
+  }
+
+  if (item < node.value) {
+    if (node.left) {
+      add(node.left, item, index)
+    } else {
+      node.left = new Map();
+      node.left.set(
+        item,
+        { left: null, right: null, value: item, index }
+      );
+    }
+  }
+}
+
+binaryTree.set(
+  l[pivot],
+  { left: null, right: null, value: l[pivot], index: pivot }
+);
+
+console.log(binaryTree)
+
+while (start < l.length) {
+  add(binaryTree, l[start], start)
+  start++
+}
+
+console.log(binaryTree)
+```
