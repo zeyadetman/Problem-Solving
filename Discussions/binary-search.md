@@ -12,9 +12,7 @@ const l = [-1, 0, 3, 5, 9, 12]
 let binaryTree = null;
 
 const add = (root, item, index) => {
-  console.log(root, item)
   let node = root.get(Array.from(root.keys())[0]);
-  console.log({nodeValue: node.value, item})
   if (item > node.value) {
     if (node.right) {
       add(node.right, item, index)
@@ -67,9 +65,7 @@ const pivot = Math.floor(l.length / 2);
 let start = 0;
 
 const add = (root, item, index) => {
-  console.log(root, item)
   let node = root.get(Array.from(root.keys())[0]);
-  console.log({ nodeValue: node.value, item })
   if (item > node.value) {
     if (node.right) {
       add(node.right, item, index)
@@ -99,8 +95,6 @@ binaryTree.set(
   l[pivot],
   { left: null, right: null, value: l[pivot], index: pivot }
 );
-
-console.log(binaryTree)
 
 while (start < l.length) {
   add(binaryTree, l[start], start)
