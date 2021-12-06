@@ -1,11 +1,12 @@
 # Building BST using Javascript
 
-This file is a playground with BST.
+This file is a playground with BST. The implementations are in `javascript`.
 
 ## Without Pivot
 
 The input array is sorted, so the binary search tree will looks like in just one direction (right). So we'll lose all BST features,
 and to solve this we have to choose a pivot to be the root.
+
 ```js
 const l = [-1, 0, 3, 5, 9, 12]
 let binaryTree = null;
